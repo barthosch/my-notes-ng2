@@ -1,0 +1,17 @@
+#notes-list {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 2em;
+  grid-template-areas:
+    "list"
+    "controls";
+}
+
+#notes-list #notes-list-items {
+  grid-area: list;
+}
+
+#notes-list #notes-list-controls {
+  grid-area: controls;
+  background: red;
+}

@@ -1,0 +1,9 @@
+app-notes-list-controls {
+  grid-area: header;
+  background: red;
+}
+
+app-notes-list-items {
+  grid-area: content;
+  background: yellow;
+}
