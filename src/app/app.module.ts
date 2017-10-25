@@ -17,6 +17,8 @@ import { NotesListItemAddComponent } from './components/notes-list-item-add/note
 import { NotesListAddComponent } from './components/notes-list-add/notes-list-add.component';
 import { NotesListDetailComponent } from './components/notes-list-detail/notes-list-detail.component';
 
+import { NotesService } from "./services/notes.service";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,7 @@ import { NotesListDetailComponent } from './components/notes-list-detail/notes-l
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [NotesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
