@@ -1,21 +1,23 @@
-import { Note, Deadline, Task, Shopping } from "./classes/note";
+import { Note } from './classes/note';
 
 export const MOCK_NOTES = [
   {
-    name: "Shopping List",
+    name: 'Shopping List',
+    id: 1,
     items: [
-      new Shopping(null, false, "Eggs", null, 12),
-      new Shopping(null, false, "Milk", null, 2),
-      new Shopping(null, false, "Bread", null, 1),
+      new Note({caption: 'Eggs', quantity: 12}),
+      new Note({caption: 'Milk', quantity: 1}),
+      new Note({caption: 'Bread', quantity: 1})
     ]
   },
   {
-    name: "ToDos",
+    name: 'ToDos',
+    id: 2,
     items: [
-      new Task(null, false, "Do some sports", null, 0, "how about bicycling"),
-      new Task(null, false, "Find a hobby", null, 0, "maybe stamps?")
+      new Note({caption: 'Do some sports', details: 'how about bicycling'}),
+      new Note({caption: 'Find a hobby', details: 'maybe stamps?'})
     ]
   }
-]
+];
 
 

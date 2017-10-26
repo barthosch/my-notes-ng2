@@ -6,11 +6,15 @@
   right: 0;
   border: 1px solid black;
   display: grid;
-  grid-template-columns: 15em auto;
+  grid-template-columns: auto;
   grid-template-rows: 4em auto;
   grid-template-areas:
-    "header header"
-    "notes-lists notes-list";
+    "header"
+    "main-view";
+}
+
+router-outlet {
+  display: none;
 }
 
 app-header {
@@ -18,17 +22,12 @@ app-header {
   background: green;
 }
 
-app-notes-lists {
-  grid-area: notes-lists;
-}
-
-app-notes-list {
-  grid-area: notes-list;
-  background: brown;
+app-main-view {
+  grid-area: main-view;
 
   display: grid;
-  grid-template-rows: 3em auto;
+  grid-template-columns: 10em auto;
+  grid-template-rows: auto;
   grid-template-areas:
-    "header"
-    "content";
+    "menu notes";
 }

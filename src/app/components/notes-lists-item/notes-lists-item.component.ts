@@ -6,7 +6,7 @@ import {Component, Input, OnInit} from '@angular/core';
   styleUrls: ['./notes-lists-item.component.css']
 })
 export class NotesListsItemComponent implements OnInit {
-  @Input("noteItem") note : any;
+  @Input('notesList') notesList: any;
 
   constructor() { }
 

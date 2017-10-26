@@ -1,0 +1,14 @@
+app-notes-lists {
+  grid-area: menu;
+}
+
+app-notes-list {
+  grid-area: notes;
+  background: brown;
+
+  display: grid;
+  grid-template-rows: 3em auto;
+  grid-template-areas:
+    "header"
+    "content";
+}

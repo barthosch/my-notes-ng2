@@ -17,7 +17,16 @@ import { NotesListItemAddComponent } from './components/notes-list-item-add/note
 import { NotesListAddComponent } from './components/notes-list-add/notes-list-add.component';
 import { NotesListDetailComponent } from './components/notes-list-detail/notes-list-detail.component';
 
-import { NotesService } from "./services/notes.service";
+import { NotesService } from './services/notes.service';
+
+import { RouterModule, Routes } from '@angular/router';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { MainViewComponent } from './components/main-view/main-view.component';
+
+const appRoutes: Routes = [
+  { path: 'list/:id', component: MainViewComponent },
+  { path: '**', component: PageNotFoundComponent }
+];
 
 @NgModule({
   declarations: [
@@ -33,12 +42,18 @@ import { NotesService } from "./services/notes.service";
     NotesListItemDetailControlsComponent,
     NotesListItemAddComponent,
     NotesListAddComponent,
-    NotesListDetailComponent
+    NotesListDetailComponent,
+    PageNotFoundComponent,
+    MainViewComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true } // <-- debugging purposes only
+    )
   ],
   providers: [NotesService],
   bootstrap: [AppComponent]
