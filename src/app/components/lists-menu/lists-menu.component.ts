@@ -3,12 +3,12 @@ import {NotesService} from '../../services/notes.service';
 import {ActivatedRoute} from '@angular/router';
 
 @Component({
-  selector: 'app-notes-lists',
-  templateUrl: './notes-lists.component.html',
-  styleUrls: ['./notes-lists.component.css'],
+  selector: 'app-lists-menu',
+  templateUrl: './lists-menu.component.html',
+  styleUrls: ['./lists-menu.component.css'],
   providers: [NotesService]
 })
-export class NotesListsComponent implements OnInit, OnDestroy {
+export class ListsMenuComponent implements OnInit, OnDestroy {
 
   public notesLists;
   public activeListId;

@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { NotesListsComponent } from './components/notes-lists/notes-lists.component';
-import { NotesListsItemComponent } from './components/notes-lists-item/notes-lists-item.component';
+import { ListsMenuComponent } from './components/lists-menu/lists-menu.component';
+import { ListsMenuItemComponent } from './components/lists-menu-item/lists-menu-item.component';
 import { NotesListComponent } from './components/notes-list/notes-list.component';
 import { NotesListControlsComponent } from './components/notes-list-controls/notes-list-controls.component';
 import { NotesListItemsComponent } from './components/notes-list-items/notes-list-items.component';
@@ -32,8 +32,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     HeaderComponent,
-    NotesListsComponent,
-    NotesListsItemComponent,
+    ListsMenuComponent,
+    ListsMenuItemComponent,
     NotesListComponent,
     NotesListControlsComponent,
     NotesListItemsComponent,
