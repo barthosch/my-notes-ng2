@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ListsMenuItemComponent implements OnInit {
   @Input('notesList') notesList: any;
-
+  @Input('active') active: boolean;
   constructor() { }
 
   ngOnInit() {

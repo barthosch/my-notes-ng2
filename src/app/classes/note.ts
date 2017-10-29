@@ -34,3 +34,25 @@ export class Note {
     this.details = details;
   }
 }
+
+export class NotesList {
+  public id: string;
+  public type: string;
+  public caption: string;
+  public details: string;
+  public notes: Array<Note>;
+
+  constructor(options: any) {
+    const {
+      id = UUID.UUID(),
+      type = 'todo',
+      caption = 'To Dos',
+      details = ''
+    } = options;
+
+    this.id = id;
+    this.type = type;
+    this.caption = caption;
+    this.details = details;
+  }
+}

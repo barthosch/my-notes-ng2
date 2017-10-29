@@ -16,20 +16,22 @@ export class ListsMenuComponent implements OnInit, OnDestroy {
 
   constructor(private notesService: NotesService,
               private activatedRoute: ActivatedRoute) {
-    this.notesLists = notesService.getNotes();
-    this.activeListId = notesService.getActiveId();
-    console.log('notesLists: ', this.notesLists);
-    console.log('activatedRoute', activatedRoute);
+    this.notesLists = notesService.notes;
+    this.activeListId = this.notesLists[0].id;
   }
 
   ngOnInit() {
     this.sub = this.activatedRoute.params.subscribe(params => {
-      this.activeListId = +params['id'];
+      this.activeListId = params['id'];
     });
   }
 
   ngOnDestroy() {
     this.sub.unsubscribe();
+  }
+
+  addList() {
+    this.notesService.addList();
   }
 
 }

@@ -9,19 +9,16 @@ import {NotesService} from "../../services/notes.service";
 })
 export class NotesListItemsComponent implements OnInit, OnDestroy {
   private sub: any;
-  public activeList: any;
-  private notesLists: any;
+  public notesList: any;
 
   constructor(private notesService: NotesService,
               private activatedRoute: ActivatedRoute) {
-    this.notesLists = notesService.getNotes();
   }
 
   ngOnInit() {
     this.sub = this.activatedRoute.params.subscribe(params => {
-      const activeListId = +params['id'];
-      this.activeList = this.notesLists.filter((list) => list.id === activeListId)[0].items;
-      console.log("activeList", this.activeList.items);
+      const activeListId = params['id'];
+      this.notesList = this.notesService.selectList(activeListId);
     });
   }
 
