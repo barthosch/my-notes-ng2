@@ -4,6 +4,9 @@ app-notes-list-controls {
 }
 
 app-notes-list-items {
+  overflow: scroll;
+  min-height: 0;
+  max-height: 100%;
   grid-area: content;
   background: yellow;
 }
