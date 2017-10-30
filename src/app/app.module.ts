@@ -25,6 +25,7 @@ import { MainViewComponent } from './components/main-view/main-view.component';
 
 const appRoutes: Routes = [
   { path: 'list/:id', component: MainViewComponent },
+  { path: 'lists', component: MainViewComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 

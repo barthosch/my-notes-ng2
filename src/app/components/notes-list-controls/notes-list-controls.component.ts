@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NotesService} from "../../services/notes.service";
+import { NotesService } from "../../services/notes.service";
 
 @Component({
   selector: 'app-notes-list-controls',
@@ -13,6 +13,17 @@ export class NotesListControlsComponent implements OnInit {
   addNote() {
     console.log("addNote...");
     this.notesService.addNote();
+  }
+
+  clearList() {
+    console.log("clearList");
+    // todo: show confirmation prompt
+    this.notesService.clearList();
+  }
+
+  editList() {
+    console.log("editList");
+    // todo: show edit window
   }
 
   ngOnInit() {

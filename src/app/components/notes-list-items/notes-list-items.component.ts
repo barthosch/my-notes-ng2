@@ -10,6 +10,7 @@ import {NotesService} from "../../services/notes.service";
 export class NotesListItemsComponent implements OnInit, OnDestroy {
   private sub: any;
   public notesList: any;
+  public listType: string;
 
   constructor(private notesService: NotesService,
               private activatedRoute: ActivatedRoute) {
@@ -19,6 +20,7 @@ export class NotesListItemsComponent implements OnInit, OnDestroy {
     this.sub = this.activatedRoute.params.subscribe(params => {
       const activeListId = params['id'];
       this.notesList = this.notesService.selectList(activeListId);
+      if (this.notesList) this.listType = 'type-' + this.notesList.type;
     });
   }
 

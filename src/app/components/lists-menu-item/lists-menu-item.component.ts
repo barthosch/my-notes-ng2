@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {NotesService} from "../../services/notes.service";
 
 @Component({
   selector: 'app-lists-menu-item',
@@ -8,9 +9,13 @@ import {Component, Input, OnInit} from '@angular/core';
 export class ListsMenuItemComponent implements OnInit {
   @Input('notesList') notesList: any;
   @Input('active') active: boolean;
-  constructor() { }
+  constructor(private notesService: NotesService) { }
 
   ngOnInit() {
+  }
+
+  removeList() {
+    this.notesService.removeList(this.notesList.id);
   }
 
 }

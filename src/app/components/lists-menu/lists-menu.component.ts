@@ -5,8 +5,7 @@ import {ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-lists-menu',
   templateUrl: './lists-menu.component.html',
-  styleUrls: ['./lists-menu.component.css'],
-  providers: [NotesService]
+  styleUrls: ['./lists-menu.component.css']
 })
 export class ListsMenuComponent implements OnInit, OnDestroy {
 
@@ -33,5 +32,4 @@ export class ListsMenuComponent implements OnInit, OnDestroy {
   addList() {
     this.notesService.addList();
   }
-
 }
