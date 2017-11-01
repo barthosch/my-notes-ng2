@@ -1,0 +1,37 @@
+<div class="content">
+  <header>
+    <h2>Add Item</h2>
+  </header>
+
+  <section>
+    <fieldset>
+      <legend>Bezeichnung</legend>
+      <input id="newCaption" type="text" [(ngModel)]="newItem.caption" required>
+    </fieldset>
+
+    <fieldset>
+      <legend>Anzahl</legend>
+      <input id="newQuantity" type="number" [(ngModel)]="newItem.quantity">
+    </fieldset>
+
+    <fieldset>
+      <legend>Farbe</legend>
+      <input id="newColor" type="color" [(ngModel)]="newItem.color.hexString">
+    </fieldset>
+
+    <fieldset>
+      <legend>Fällig am</legend>
+      <input id="newDue" type="date" [(ngModel)]="newItem.due">
+    </fieldset>
+
+    <fieldset>
+      <legend>Details</legend>
+      <input id="newDetails" type="text" [(ngModel)]="newItem.details">
+    </fieldset>
+  </section>
+
+  <footer>
+    <button (click)="cancel()">Cancel</button>
+    <button (click)="addItemOk()">OK</button>
+  </footer>
+</div>

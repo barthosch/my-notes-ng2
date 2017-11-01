@@ -1,5 +1,5 @@
-<div id="menu">
-  <div (click)="addNote()">Add Item</div>
-  <div (click)="clearList()">Clear List</div>
-  <div (click)="editList()">Edit List</div>
+<div id="menu" *ngIf="notesService.activeList">
+  <a routerLink="addItem">AddItem</a>
+  <a (click)="clearList($event)" href="#">Clear List</a>
+  <div (click)="editList()">List Properties</div>
 </div>

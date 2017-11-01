@@ -21,16 +21,17 @@ import {Router} from "@angular/router";
       this.activeList = lists[0];
     } else {
       // todo: check this
-      this.activeList = {items: []};
+      this.activeList = null;
     }
     return this.activeList;
   }
 
   addNote(options: any = {}) {
+    console.log("addNote", options);
     let newNote = new Note({
       type: options.type || 'note',
       done: options.done || false,
-      caption: options.caption = 'New Note',
+      caption: options.caption || 'New Note',
       color: options.color || new Color(0, 0, 0),
       due: options.due || new Date(),
       quantity: options.quantity || 0,
@@ -47,8 +48,6 @@ import {Router} from "@angular/router";
   removeList(id: string) {
     for(let i = 0; i < this.notes.length; i++) {
       if (this.notes[i].id == id) {
-        console.log("found");
-        debugger;
         if (this.activeList && id === this.activeList.id) {
           console.log("navigate");
           this.router.navigate(["/lists"]);

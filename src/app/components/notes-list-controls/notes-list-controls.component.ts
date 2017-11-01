@@ -8,17 +8,19 @@ import { NotesService } from "../../services/notes.service";
 })
 export class NotesListControlsComponent implements OnInit {
 
-  constructor(private notesService: NotesService) { }
+  constructor(public notesService: NotesService) { }
 
   addNote() {
     console.log("addNote...");
     this.notesService.addNote();
   }
 
-  clearList() {
-    console.log("clearList");
-    // todo: show confirmation prompt
-    this.notesService.clearList();
+  clearList(e: Event) {
+    e.preventDefault();
+    // yuck
+    if (window.confirm("Are you sure? All items will be deleted. This cannot be undone.")) {
+      this.notesService.clearList();
+    }
   }
 
   editList() {

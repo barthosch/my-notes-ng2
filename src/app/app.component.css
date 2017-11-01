@@ -31,3 +31,26 @@ app-main-view {
   grid-template-areas:
     "menu notes";
 }
+
+
+.modal {
+  z-index: 1;
+  position: fixed;
+  left: 0; top: 0; right: 0; bottom: 0;
+  background: rgba(100,100,100,0.6);
+  content: " ";
+  pointer-events: none;
+}
+
+.modal > .content {
+  z-index: 2;
+  padding: 0.5em;
+  position: absolute;
+  background: white;
+  min-width: 30em;
+  left: 50%;
+  top: 4em;
+  transform: translateX(-50%);
+  box-shadow: 0 0.5em 5em rgba(0,0,0,0.4);
+  pointer-events: all;
+}

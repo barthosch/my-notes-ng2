@@ -46,4 +46,19 @@ export class Color {
         .map(colorValue => Math.max(colorValue, 0))
         .map(colorValue => Math.min(colorValue, 255));
   }
+
+  get hexString() : string {
+    const componentToHex = (component) => {
+      const hex = component.toString(16);
+      return hex.length == 1 ? "0" + hex : hex;
+    }
+    return "#" + componentToHex(this._red) + componentToHex(this._green) + componentToHex(this._blue);
+  }
+
+  set hexString(newColor: string) {
+    let result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(newColor);
+    this._red = parseInt(result[1], 16);
+    this._green = parseInt(result[2], 16);
+    this._blue = parseInt(result[3], 16);
+  }
 }

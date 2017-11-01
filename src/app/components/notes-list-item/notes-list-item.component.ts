@@ -14,4 +14,8 @@ export class NotesListItemComponent implements OnInit {
   ngOnInit() {
   }
 
+  log() {
+    console.log(this.note);
+  }
+
 }
