@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Note} from "../../classes/note";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-notes-list-item',
@@ -7,15 +8,16 @@ import {Note} from "../../classes/note";
   styleUrls: ['./notes-list-item.component.css']
 })
 export class NotesListItemComponent implements OnInit {
-  @Input("note") note: Note;
+  @Input('note') note: Note;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  log() {
+  open() {
     console.log(this.note);
+    //this.router.navigate(['/list', this.currentListId]);
   }
 
 }

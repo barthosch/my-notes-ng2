@@ -23,10 +23,12 @@ import { RouterModule, Routes } from '@angular/router';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { MainViewComponent } from './components/main-view/main-view.component';
 import { AddNoteModalComponent } from './components/add-note-modal/add-note-modal.component';
+import { EditNoteModalComponent } from './components/edit-note-modal/edit-note-modal.component';
+import { EditNoteComponent } from './components/edit-note/edit-note.component';
 
 const appRoutes: Routes = [
   { path: 'list/:id', component: MainViewComponent },
-  { path: 'list/:id/:action', component: MainViewComponent },
+  { path: 'list/:id/:action/:noteId', component: MainViewComponent },
 
 
   { path: 'lists', component: MainViewComponent},
@@ -50,7 +52,9 @@ const appRoutes: Routes = [
     NotesListDetailComponent,
     PageNotFoundComponent,
     MainViewComponent,
-    AddNoteModalComponent
+    AddNoteModalComponent,
+    EditNoteModalComponent,
+    EditNoteComponent
   ],
   imports: [
     BrowserModule,

@@ -1,21 +1,21 @@
-import { MOCK_NOTES } from "../mock-notes";
-import { Note } from "../classes/note";
+import { MOCK_NOTES } from '../mock-notes';
+import { Note } from '../classes/note';
 import { Injectable } from '@angular/core';
-import {Color} from "../classes/color";
-import {UUID} from "angular2-uuid";
-import {Router} from "@angular/router";
+import { Color } from '../classes/color';
+import { UUID } from 'angular2-uuid';
+import { Router } from '@angular/router';
 
 @Injectable() export class NotesService {
   public notes;
   public activeList;
 
   constructor(private router: Router) {
-    console.log("new notes service");
+    console.log('new notes service');
     this.notes = MOCK_NOTES;
   }
 
   selectList(id: string) {
-    console.log("select list", id);
+    console.log('select list', id);
     const lists = this.notes.filter((list) => list.id == id);
     if (lists.length) {
       this.activeList = lists[0];
@@ -27,8 +27,8 @@ import {Router} from "@angular/router";
   }
 
   addNote(options: any = {}) {
-    console.log("addNote", options);
-    let newNote = new Note({
+    console.log('addNote', options);
+    const newNote = new Note({
       type: options.type || 'note',
       done: options.done || false,
       caption: options.caption || 'New Note',
@@ -46,11 +46,11 @@ import {Router} from "@angular/router";
   }
 
   removeList(id: string) {
-    for(let i = 0; i < this.notes.length; i++) {
+    for (let i = 0; i < this.notes.length; i++) {
       if (this.notes[i].id == id) {
         if (this.activeList && id === this.activeList.id) {
-          console.log("navigate");
-          this.router.navigate(["/lists"]);
+          console.log('navigate');
+          this.router.navigate(['/lists']);
         }
 
         this.notes.splice(i, 1);
@@ -61,7 +61,7 @@ import {Router} from "@angular/router";
   }
 
   addList(options: any = {}) {
-    let newList = {
+    const newList = {
       name: options.name || 'New List',
       type: options.type || 'todo',
       id: options.id || UUID.UUID(),

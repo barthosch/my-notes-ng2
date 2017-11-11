@@ -1,16 +1,16 @@
-import { Component, OnInit } from '@angular/core';
-import {Color} from "../../classes/color";
-import {ActivatedRoute, Router} from "@angular/router";
-import {NotesService} from "../../services/notes.service";
-import {Observable} from "rxjs/Observable";
-import {Subscription} from "rxjs/Subscription";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Color} from '../../classes/color';
+import {ActivatedRoute, Router} from '@angular/router';
+import {NotesService} from '../../services/notes.service';
+import {Observable} from 'rxjs/Observable';
+import {Subscription} from 'rxjs/Subscription';
 
 @Component({
   selector: 'app-add-note-modal',
   templateUrl: './add-note-modal.component.html',
   styleUrls: ['./add-note-modal.component.css']
 })
-export class AddNoteModalComponent implements OnInit {
+export class AddNoteModalComponent implements OnInit, OnDestroy {
   // todo handle Escape and Return keys
 
   private currentListId: string;
@@ -28,7 +28,7 @@ export class AddNoteModalComponent implements OnInit {
               private activatedRoute: ActivatedRoute,
               private notesService: NotesService) { }
 
-  addItemOk() {
+  addItemOkay() {
     this.notesService.addNote(this.newItem);
     this.router.navigate(['/list', this.currentListId]);
   }

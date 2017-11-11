@@ -1,14 +1,14 @@
 <div class="content">
   <header>
-    <h2>Add Item</h2>
+    <h2>Edit Item</h2>
   </header>
 
   <section (keyup.escape)="cancel()">
-    <app-edit-note [note]="newItem"></app-edit-note>
+    <app-edit-note [note]="note"></app-edit-note>
   </section>
 
   <footer>
     <button (click)="cancel()">Cancel</button>
-    <button (click)="addItemOkay()">OK</button>
+    <button (click)="editItemOkay()">OK</button>
   </footer>
 </div>

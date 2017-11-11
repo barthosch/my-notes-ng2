@@ -1,10 +1,10 @@
 <div id="notes-list">
-  <div id="notes-list-items">
+  <ul id="notes-list-items">
     <app-lists-menu-item *ngFor="let notesList of notesLists"
                          [notesList]="notesList"
                          [active]="notesList.id === activeListId"
     ></app-lists-menu-item>
-  </div>
+  </ul>
 
   <div id="notes-list-controls">
     <div (click)="addList()">Add List</div>

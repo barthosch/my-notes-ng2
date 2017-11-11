@@ -1,3 +1,4 @@
-<p class="note-item" (click)="log()">
+<p class="note-item" (click)="open()">
   {{note.caption}}
+  <a [routerLink]="['./edit', note.id]">Edit</a>
 </p>

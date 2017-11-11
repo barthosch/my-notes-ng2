@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {NotesService} from "../../services/notes.service";
 import {Color} from "../../classes/color";
@@ -8,7 +8,7 @@ import {Color} from "../../classes/color";
   templateUrl: './notes-list.component.html',
   styleUrls: ['./notes-list.component.css']
 })
-export class NotesListComponent implements OnInit {
+export class NotesListComponent implements OnInit, OnDestroy {
 
   public action: string;
   private sub: any;

@@ -1,0 +1,24 @@
+<fieldset>
+  <legend>Bezeichnung</legend>
+  <input autofocus id="editNoteCaption" type="text" [(ngModel)]="note.caption" required>
+</fieldset>
+
+<fieldset>
+  <legend>Anzahl</legend>
+  <input id="editNoteQuantity" type="number" [(ngModel)]="note.quantity">
+</fieldset>
+
+<fieldset>
+  <legend>Farbe</legend>
+  <input id="editNoteColor" type="color" [(ngModel)]="note.color.hexString">
+</fieldset>
+
+<fieldset>
+  <legend>Fällig am</legend>
+  <input id="editNoteDue" type="date" [(ngModel)]="note.due">
+</fieldset>
+
+<fieldset>
+  <legend>Details</legend>
+  <input id="editNoteDetails" type="text" [(ngModel)]="note.details">
+</fieldset>
